@@ -90,6 +90,7 @@ type UpdateParams struct {
 	Classification string     `json:"classification,omitempty"`
 	ExpirationDate *time.Time `json:"expiration_date,omitempty"`
 	EmployeePhoto  string     `json:"employee_photo,omitempty"`
+	FileData       string     `json:"file_data"`
 }
 
 // ListKeysParams defines parameters for filtering cards
