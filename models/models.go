@@ -14,29 +14,29 @@ type Device struct {
 
 // Card represents an NFC key or access pass
 type Card struct {
-	ID                    string                 `json:"id"`
-	CardTemplateID        string                 `json:"card_template_id"`
-	EmployeeID            string                 `json:"employee_id"`
-	CardNumber            string                 `json:"card_number"`
-	SiteCode              string                 `json:"site_code,omitempty"`
-	FullName              string                 `json:"full_name"`
-	Email                 string                 `json:"email"`
-	PhoneNumber           string                 `json:"phone_number"`
-	Classification        string                 `json:"classification"`
-	StartDate             time.Time              `json:"start_date"`
-	ExpirationDate        time.Time              `json:"expiration_date"`
-	EmployeePhoto         string                 `json:"employee_photo"`
-	State                 string                 `json:"state"`
-	URL                   string                 `json:"install_url"`
-	InstallURL            string                 `json:"install_url"`
-	Details               interface{}            `json:"details,omitempty"`
-	FileData              string                 `json:"file_data,omitempty"`
-	DirectInstallURL      string                 `json:"direct_install_url,omitempty"`
-	Temporary             bool                   `json:"temporary"`
-	Devices               []Device               `json:"devices,omitempty"`
-	Metadata              map[string]interface{} `json:"metadata,omitempty"`
-	CreatedAt             time.Time              `json:"created_at"`
-	UpdatedAt             time.Time              `json:"updated_at"`
+	ID               string                 `json:"id"`
+	CardTemplateID   string                 `json:"card_template_id"`
+	EmployeeID       string                 `json:"employee_id"`
+	CardNumber       string                 `json:"card_number"`
+	SiteCode         string                 `json:"site_code,omitempty"`
+	FullName         string                 `json:"full_name"`
+	Email            string                 `json:"email"`
+	PhoneNumber      string                 `json:"phone_number"`
+	Classification   string                 `json:"classification"`
+	StartDate        time.Time              `json:"start_date"`
+	ExpirationDate   time.Time              `json:"expiration_date"`
+	EmployeePhoto    string                 `json:"employee_photo"`
+	State            string                 `json:"state"`
+	URL              string                 `json:"install_url"`
+	InstallURL       string                 `json:"install_url"`
+	Details          interface{}            `json:"details,omitempty"`
+	FileData         string                 `json:"file_data,omitempty"`
+	DirectInstallURL string                 `json:"direct_install_url,omitempty"`
+	Temporary        bool                   `json:"temporary"`
+	Devices          []Device               `json:"devices,omitempty"`
+	Metadata         map[string]interface{} `json:"metadata,omitempty"`
+	CreatedAt        time.Time              `json:"created_at"`
+	UpdatedAt        time.Time              `json:"updated_at"`
 }
 
 // CardProvisionResponse represents the response from provisioning a card
@@ -77,6 +77,7 @@ type ProvisionParams struct {
 	ExpirationDate time.Time `json:"expiration_date"`
 	EmployeePhoto  string    `json:"employee_photo"`
 	Temporary      bool      `json:"temporary,omitempty"`
+	FileData       string    `json:"file_data"`
 }
 
 // UpdateParams defines parameters for updating an existing card
@@ -242,12 +243,12 @@ type LedgerItemPassTemplate struct {
 
 // LedgerItemAccessPass represents an access pass reference within a ledger item
 type LedgerItemAccessPass struct {
-	ID                     string                  `json:"id"`
-	FullName               string                  `json:"full_name"`
-	State                  string                  `json:"state"`
-	Metadata               map[string]interface{}  `json:"metadata"`
-	UnifiedAccessPassExID  string                  `json:"unified_access_pass_ex_id"`
-	PassTemplate           *LedgerItemPassTemplate `json:"pass_template,omitempty"`
+	ID                    string                  `json:"id"`
+	FullName              string                  `json:"full_name"`
+	State                 string                  `json:"state"`
+	Metadata              map[string]interface{}  `json:"metadata"`
+	UnifiedAccessPassExID string                  `json:"unified_access_pass_ex_id"`
+	PassTemplate          *LedgerItemPassTemplate `json:"pass_template,omitempty"`
 }
 
 // LedgerItem represents a billing ledger item
